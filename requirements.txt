@@ -6,3 +6,4 @@ gunicorn
 djangorestframework_simplejwt
 requests
 whitenoise
+drf-yasg

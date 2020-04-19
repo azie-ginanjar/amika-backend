@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'authentication',
     'user',
     'whitenoise.runserver_nostatic',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
