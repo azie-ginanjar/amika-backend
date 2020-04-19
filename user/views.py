@@ -28,11 +28,7 @@ class UserRegister(generics.CreateAPIView):
             )
 
         user = User.objects.create(
-            password=request.data["password"],
-            username=request.data["username"],
-            email=request.data["email"],
-            name=request.data["name"],
-            role=request.data["role"]
+            request.data
         )
 
         user.set_password(request.data['password'])

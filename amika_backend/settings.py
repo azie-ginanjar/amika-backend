@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'authentication',
     'user',
+    'customer',
     'whitenoise.runserver_nostatic',
     'drf_yasg',
 ]
