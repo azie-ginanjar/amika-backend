@@ -19,7 +19,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 ROOT_DIR = Path(__file__).parents[2]
 # my_awesome_project/)
-APPS_DIR = ROOT_DIR / "my_awesome_project"
+APPS_DIR = ROOT_DIR / "amika_backend"
 
 env = environ.Env()
 
