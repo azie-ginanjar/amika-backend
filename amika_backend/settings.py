@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'authentication',
     'user',
     'customer',
+    'material',
     'whitenoise.runserver_nostatic',
     'drf_yasg',
 ]

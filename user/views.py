@@ -28,7 +28,11 @@ class UserRegister(generics.CreateAPIView):
             )
 
         user = User.objects.create(
-            request.data
+            password=request.data["password"],
+            username=request.data["username"],
+            email=request.data["email"],
+            name=request.data["name"],
+            role=request.data["role"]
         )
 
         user.set_password(request.data['password'])
@@ -42,11 +46,11 @@ class UserRegister(generics.CreateAPIView):
 
 class UserDetailsView(generics.RetrieveUpdateDestroyAPIView):
     queryset = User.objects.all()
-    permission_classes = (AllowAny, )
+    permission_classes = (AllowAny,)
     serializer_class = UserSerializer
 
     def put(self, request, *args, **kwargs):
-        if request.user.is_authenticated: #is_superuser or (request.user.is_authenticated and request.user.pk == kwargs["pk"]):
+        if request.user.is_authenticated:  # is_superuser or (request.user.is_authenticated and request.user.pk == kwargs["pk"]):
             try:
                 user = self.queryset.get(pk=kwargs["pk"])
                 serializer = UserDetailsSerializer()
